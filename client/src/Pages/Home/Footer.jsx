@@ -29,6 +29,26 @@ function Footer() {
         </div>
         <div id="subFooter2">
           <h3>SUBSCRIBE TO OUR NEWS LETTER</h3>
+          <div>
+            <input
+              style={{
+                outline: "none",
+                height: "25px",
+                width: "250px",
+              }}
+              placeholder="Enter your email address"
+            />
+            <button
+              style={{
+                backgroundColor: "gray",
+                height: "31px",
+                borderRadius: "0px",
+                fontSize: "small",
+              }}
+            >
+              Subscribe
+            </button>
+          </div>
         </div>
       </div>
     </>
