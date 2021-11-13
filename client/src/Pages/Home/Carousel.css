@@ -1,0 +1,32 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+} 
+
+button.rec-dot {
+    display: none;
+}
+
+.rec.rec-arrow:hover, .rec.rec-arrow:active, .rec.rec-arrow:focus,  .rec.rec-arrow {
+  color: black !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  border-style: none !important;
+}
+
+.bottomDiv {
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.bottomDiv > div {
+  margin: 15px 20px;
+}
