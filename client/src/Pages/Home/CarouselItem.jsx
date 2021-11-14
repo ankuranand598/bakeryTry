@@ -17,7 +17,7 @@ import Modal from "react-modal";
 import "./Carousel.css";
 import { Cart } from "./Cart";
 import { Cart2 } from "./Cart2";
-import { Newone } from "./Newone";
+import Radio from "@material-ui/core/Radio";
 
 Modal.setAppElement("#root");
 
@@ -26,7 +26,13 @@ const CarouselItem = ({ data }) => {
 	const [keep, setKeep] = useState("");
 	const [show, setShow] = useState(true);
 	const [cartItems, setCartItems] = useState([]);
-	const [price, setPrice] = useState(0);
+	// const [price, setPrice] = useState(499);
+	const [price, setPrice] = useState(499);
+
+	const handlePrice = (e) => {
+		console.log("e.target.value:", e.target.value);
+		setPrice(e.target.value);
+	};
 
 	const breakPoints = [
 		{ width: 1, itemsToShow: 1 },
@@ -51,9 +57,7 @@ const CarouselItem = ({ data }) => {
 		setShow(!show);
 	};
 
-	const radio = (price) => {
-		setPrice(price);
-	}
+
 
 	const onAdd = (prod) => {
 		console.log(prod);
@@ -184,28 +188,71 @@ const CarouselItem = ({ data }) => {
 												{keep.rating} <span>&#9733;</span>
 											</>
 										</div>
+										{/* --------------------------------------------------------------------------------										 */}
 										<div className="prices">
-											<Newone
+											{/* <Newone
 												radio={radio}
-												sval={keep.small}
+												keep.small={keep.small}
 												mval={keep.medium}
 												lval={keep.large}
-											></Newone>
+											></Newone> */}
+											<div className="App">
+												<div className="cont">
+													<div style={{ marginTop: "11px" }}>
+														&#8377;
+														<span>{keep.small}</span>
+													</div>
+													<Radio
+														value={keep.small}
+														checked={price == keep.small}
+														color="primary"
+														onChange={handlePrice}
+													/>
+												</div>
+												<div className="cont">
+													<div style={{ marginTop: "11px" }}>
+														&#8377;
+														<span>{keep.medium}</span>
+													</div>
+													<Radio
+														value={keep.medium}
+														checked={price == keep.medium}
+														color="primary"
+														onChange={handlePrice}
+													/>
+												</div>
+												<div className="cont">
+													<div style={{ marginTop: "11px" }}>
+														&#8377;
+														<span>{keep.large}</span>
+													</div>
+													<Radio
+														value={keep.large}
+														checked={price == keep.large}
+														color="primary"
+														onChange={handlePrice}
+													/>
+												</div>
+											</div>
 										</div>
 
-										<Cart keep={keep}  onAdd={onAdd} onRemove={onRemove}></Cart>
-										<div>
-											<button
-												// className="check"
-												onClick={toggle}
-											>
-												Proceed to Checkout
-											</button>
-										</div>
+										{/* --------------------------------------------------------------------------------										 */}
+
+										<Cart
+											keep={keep}
+											toggle={toggle}
+											onAdd={onAdd}
+											onRemove={onRemove}
+										></Cart>
 									</div>
 								</div>
 							) : (
-								<Cart2 price={price} cartItems={cartItems} onRemove={onRemove} onAdd={onAdd}></Cart2>
+								<Cart2
+									price={price}
+									cartItems={cartItems}
+									onRemove={onRemove}
+									onAdd={onAdd}
+								></Cart2>
 							)}
 
 							<div>
@@ -223,7 +270,6 @@ const CarouselItem = ({ data }) => {
 								</button>
 							</div>
 						</Modal>
-						
 					</>
 				))}
 			</Carousel>

@@ -4,7 +4,7 @@ import Radio from "@material-ui/core/Radio";
 // import RadioGroup from "@material-ui/core/RadioGroup";
 // Modal.setAppElement("#root");
 
-export const Newone = function Newone({ sval, mval, lval ,radio}) {
+export const Newone = function Newone({ radio,sval, mval, lval }) {
 	// console.log('sval,mval,lval:', sval,mval,lval)
 	const [gender, setGender] = useState("small");
 

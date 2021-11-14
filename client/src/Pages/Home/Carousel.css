@@ -62,7 +62,7 @@ img{
 }
 .add {
 	/* border: 1px solid red; */
-	background: #FFE34D;
+	background: #ffe34d;
 	border-radius: 20px;
 }
 .text_cont {
@@ -92,17 +92,23 @@ img{
 	margin-left: 20rem;
 }
 .check {
-	margin: 0% 5%;
+	margin: 0 -53px;
 	padding: 1%;
 	font-size: 14px;
 	font-weight: bolder;
-	width: 80%;
+	width: 190px;
 	margin-top: 0px;
 }
-.image_css{
+.check2 {
+	padding: 1%;
+	font-size: 14px;
+	font-weight: bolder;
+  width: 190px;
+}
+.image_css {
 	height: 100%;
 	width: 100px;
-	border-radius: 20px
+	border-radius: 20px;
 }
 /* .font_link {
 	font-family: "Roboto", sans-serif;

@@ -2,12 +2,13 @@ import { useState } from "react";
 import "./Carousel.css";
 import { RequestCake } from "../Utils/Request";
 import axios from "axios";
-export const Cart = function Cart({keep,onAdd,onRemove}) {
+export const Cart = function Cart({ keep,toggle, onAdd, onRemove }) {
 	const [counter, setCounter] = useState(1);
 	const [state, setState] = useState(true);
-	
+	const [show, setShow] = useState(true);
+
 	const plusCounter = () => {
-	    onAdd(keep)
+		onAdd(keep);
 		setCounter(counter + 1);
 	};
 	const minusCounter = () => {
@@ -15,7 +16,7 @@ export const Cart = function Cart({keep,onAdd,onRemove}) {
 		return counter <= 1 ? !state : setCounter(counter - 1);
 	};
 	const handlClick = () => {
-		onAdd(keep)
+		onAdd(keep);
 		setState(!state);
 	};
 	const handleAdd = async () => {
@@ -23,7 +24,6 @@ export const Cart = function Cart({keep,onAdd,onRemove}) {
 		// 	image: val.image,
 		// 	name: val.name,
 		// 	seller: val.seller,
-
 		// });
 	};
 	return (
@@ -38,7 +38,7 @@ export const Cart = function Cart({keep,onAdd,onRemove}) {
 						fontWeight: "bolder",
 					}}
 				>
-					Add to Cart
+					Add
 				</button>
 			) : (
 				<div>
@@ -47,10 +47,15 @@ export const Cart = function Cart({keep,onAdd,onRemove}) {
 						{counter}
 						<button onClick={plusCounter}>+</button>
 					</div> */}
-					<div style={{ margin: "21% 33%", marginBottom: "0px" }}>
+					<div style={{ margin: "33% 33%", marginBottom: "0px" }}>
 						<button onClick={minusCounter}>-</button>
 						{counter}
 						<button onClick={plusCounter}>+</button>
+						<div>
+							<button className="check" onClick={toggle}>
+								Proceed to Checkout
+							</button>
+						</div>
 					</div>
 					{/* <div className="check">
 						<button
