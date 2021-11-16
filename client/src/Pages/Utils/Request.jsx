@@ -4,4 +4,4 @@ const RequestCake = axios.create({
   baseURL: "http://localhost:3004",
 });
 
-export { RequestCake };
+export { RequestCake }
